@@ -39,6 +39,20 @@ function ProjectImage({ src, title }: { src: string; title: string }) {
 export function Projects() {
   return (
     <section id="projects" className="relative mx-auto max-w-6xl px-5 py-24">
+      <SectionHeading kicker="Projects" title="Selected work">
+        <p className="max-w-xl text-zinc-400">
+          Screenshots use JPG, PNG, or WebP in{' '}
+          <code className="rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-cyan-200/95">
+            public/projects/
+          </code>{' '}
+          — reference as{' '}
+          <code className="rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-cyan-200/95">
+            /projects/filename.jpg
+          </code>{' '}
+          in <code className="rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-cyan-200/95">portfolio.ts</code>.
+        </p>
+      </SectionHeading>
+
       <div className="mt-16 grid gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.08}>
