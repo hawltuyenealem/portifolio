@@ -41,15 +41,8 @@ export function Projects() {
     <section id="projects" className="relative mx-auto max-w-6xl px-5 py-24">
       <SectionHeading kicker="Projects" title="Selected work">
         <p className="max-w-xl text-zinc-400">
-          Screenshots use JPG, PNG, or WebP in{' '}
-          <code className="rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-cyan-200/95">
-            public/projects/
-          </code>{' '}
-          — reference as{' '}
-          <code className="rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-cyan-200/95">
-            /projects/filename.jpg
-          </code>{' '}
-          in <code className="rounded-md bg-white/10 px-1.5 py-0.5 text-sm text-cyan-200/95">portfolio.ts</code>.
+          A selection of product work across mobile and web, focused on performance, maintainability, and user
+          experience.
         </p>
       </SectionHeading>
 
@@ -57,11 +50,11 @@ export function Projects() {
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.08}>
             <motion.article
-              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-zinc-900/35 shadow-xl shadow-black/30 ring-1 ring-white/[0.04]"
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.1] bg-zinc-900/35 shadow-xl shadow-black/35 ring-1 ring-white/[0.05] backdrop-blur-sm transition-all duration-300 hover:border-cyan-300/30 hover:shadow-cyan-500/10"
               whileHover={{ y: -8 }}
               transition={springSoft}
             >
-              <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-cyan-500/0 via-transparent to-violet-600/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-500/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative aspect-[4/3] overflow-hidden bg-zinc-900">
                 <ProjectImage src={p.imageUrl} title={p.title} />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06060a] via-[#06060a]/20 to-transparent opacity-90" />
@@ -71,12 +64,12 @@ export function Projects() {
                 <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-white">
                   {p.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-400">{p.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-zinc-300">{p.description}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-md border border-white/[0.06] bg-white/[0.04] px-2 py-0.5 text-xs text-zinc-400"
+                      className="rounded-full border border-cyan-300/15 bg-cyan-500/10 px-2.5 py-1 text-xs text-cyan-100/85"
                     >
                       {t}
                     </span>
@@ -87,8 +80,8 @@ export function Projects() {
                     href={p.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-400"
-                    whileHover={{ x: 4, color: '#67e8f9' }}
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg border border-cyan-300/30 bg-cyan-500/10 px-3 py-1.5 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-500/20"
+                    whileHover={{ x: 4 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                   >
                     Open project
